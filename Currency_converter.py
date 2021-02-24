@@ -4,8 +4,8 @@ class Crypto:
         self.value = {"RUB": 2.98, "ARS": 0.82, "HNL": 0.17, "AUD": 1.9622, "MAD": 0.208}
 
     def coni_to_cash(self):
-        for key in self.value:
-            print(f"I will get {round(self.quantity * self.value[key], 2)} {key} from the sale of {self.quantity} conicoins.") 
+        for key, value in self.value.items():
+            print(f"I will get {round(self.quantity * value, 2)} {key} from the sale of {self.quantity} conicoins.") 
 
 conicoin = Crypto(float(input()))
 conicoin.coni_to_cash()
