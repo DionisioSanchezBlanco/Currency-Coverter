@@ -1,12 +1,11 @@
 class Crypto:
-    def __init__(self, quantity, value):
+    def __init__(self, quantity):
         self.quantity = quantity
-        self.value = value
+        self.value = {"RUB": 2.98, "ARS": 0.82, "HNL": 0.17, "AUD": 1.9622, "MAD": 0.208}
 
-    def coni_to_dollar(self):
-        return self.quantity * self.value
+    def coni_to_cash(self):
+        for key in self.value:
+            print(f"I will get {round(self.quantity * self.value[key], 2)} {key} from the sale of {self.quantity} conicoins.") 
 
-quantity = int(input("Please, enter the number of conicoins you have:"))
-value = float(input("Please, enter the exchange rate:"))
-conicoin = Crypto(quantity, value)
-print(f"The total amount of dollars: {conicoin.coni_to_dollar()}")
+conicoin = Crypto(float(input()))
+conicoin.coni_to_cash()
